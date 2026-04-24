@@ -1,0 +1,299 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== SWIPER CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Responsive watches website - Bedimcode</title>
+        <style>
+            .borderradius1{
+        border-radius: 30px;
+    }
+
+    .cart__container {
+  max-height: 350px;   /* or any height you prefer */
+  overflow-y: auto;
+  padding-right: 10px; /* avoid overlap with scrollbar */
+}
+        </style>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html">
+                    <img src="assets/img/favicon.jpeg" width="60px" class="borderradius1"></a>
+                    <a href="index.html">
+                    <h3 class="nav__link active-link">Watch Verse</h3>
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="featured.html" class="nav__link">Featured</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="product.html" class="nav__link">Products</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="new.html" class="nav__link">New</a>
+
+                            </li>
+                        <li class="nav__item"><a href="cart.html" class="nav__link">Cart</a></li>
+                        <li class="nav__item" id="auth-link"><a href="login.html" class="nav__link">Login</a></li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                    <div class="nav__shop" id="cart-shop">
+                        <i class='bx bx-shopping-bag' ></i>
+                    </div>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt' ></i>
+                    </div>
+                </div>
+            </nav>
+            </nav>
+        </header>
+
+        <!--==================== CART ====================-->
+      <div class="cart" id="cart">
+  <i class='bx bx-x cart__close' id="cart-close"></i>
+
+  <h2 class="cart__title-center">My Cart</h2>
+
+   <div class="cart__container" id="cart-container">
+    <!-- Cart items will be loaded dynamically -->
+    <p style="text-align: center; padding: 20px;">Your cart is empty.</p>
+  </div>
+
+  <div class="cart__prices">
+    <span class="cart__prices-item">0 items</span>
+    <span class="cart__prices-total">₹0</span>
+  </div>
+
+  <!-- Checkout Button -->
+  <form action="checkout.html" method="get" style="text-align: center; margin-top: 1.5rem;">
+    <button type="submit" style="
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    ">
+      Proceed to Checkout
+    </button>
+  </form>
+</div>
+
+
+        <!--==================== MAIN ====================-->
+        
+
+            <!--==================== FEATURED ====================-->
+            <section class="featured section container" id="featured">
+                <h2 class="section__title">
+                    Featured
+                </h2>
+
+                <div class="featured__container grid">
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+
+                        <a href="product_dynamic.html?id=1" class="new__link">
+                        <img src="assets/img/product1.png" alt="" class="new__img">
+                        </a>
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">mido</h3>
+                            <span class="featured__price">₹71000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+
+                        <a href="product_dynamic.html?id=2" class="new__link">
+                        <img src="assets/img/product2.png" alt="" class="new__img">
+                        </a>
+
+                        <div class="featured__data">
+                            <h3 class="featured__title">hamilton khaki pilot</h3>
+                            <span class="featured__price">₹79000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+
+                        <a href="product_dynamic.html?id=3" class="new__link">
+                        <img src="assets/img/product3.png" alt="" class="new__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">Hamilton seaview</h3>
+                            <span class="featured__price">₹92000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+
+                        <a href="product_dynamic.html?id=4" class="new__link">
+                        <img src="assets/img/product4.png" alt="" class="new__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">Fossil ME3</h3>
+                            <span class="featured__price">₹21000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+
+                        <a href="product_dynamic.html?id=5" class="new__link">
+                        <img src="assets/img/product5.png" alt="" class="new__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">L Duchen</h3>
+                            <span class="featured__price">₹42000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+
+                        <a href="product_dynamic.html?id=6" class="new__link">
+                        <img src="assets/img/product6.png" alt="" class="new__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">CAMO</h3>
+                            <span class="featured__price">₹38000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+                </div>
+            </section>
+
+            
+        </main>
+
+
+        </main>
+
+        <!--==================== FOOTER ====================-->
+         <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <h3 class="footer__title">Our information</h3>
+
+                    <ul class="footer__list">
+                        <li>Arslan Hussain</li>
+                        <li>Sage University, Indore</li>
+                        <li>+91 6206825799</li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">Discover</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="about.html" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="story.html" class="footer__link">our Story</a>
+                        </li>
+                        <li>
+                            <a href="customer support.html" class="footer__link">Customer Support</a>
+                        </li>
+                        <li>
+                            <a href="return&exchange.html" class="footer__link">Return & Exchange Policy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Important Links</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="account.html" class="footer__link">Account and Login</a>
+                        </li>
+                        <li>
+                            <a href="cart.html" class="footer__link">cart</a>
+                        </li>
+                        <li>
+                            <a href="checkout.html" class="footer__link">checkout</a>
+                        </li>
+                        <li>
+                            <a href="copyright.html" class="footer__link">Copy Right</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter' ></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram' ></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <span class="footer__copy">&copy; 2025 WatchVerse. All rights reserved.</span>
+        </footer>
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+        <!--=============== CART JS ===============-->
+        <script src="assets/js/cart.js"></script>
+    </body>
+</html>

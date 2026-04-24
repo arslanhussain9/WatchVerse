@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/product style.css">
+    <title>Product Details | Watch Verse</title>
+    <style>
+        .borderradius1 { border-radius: 30px; }
+        .cart__container { max-height: 350px; overflow-y: auto; padding-right: 10px; }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html"><img src="assets/img/favicon.jpeg" width="60px" class="borderradius1"></a>
+            <a href="index.html"><h3 class="nav__link active-link">Watch Verse</h3></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="featured.html" class="nav__link">Featured</a></li>
+                    <li class="nav__item"><a href="product.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="new.html" class="nav__link">New</a></li>
+                    <li class="nav__item"><a href="cart.html" class="nav__link">Cart</a></li>
+                </ul>
+            </div>
+            <div class="nav__btns">
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+                <div class="nav__shop" id="cart-shop"><i class='bx bx-shopping-bag'></i></div>
+                <div class="nav__toggle" id="nav-toggle"><i class='bx bx-grid-alt'></i></div>
+            </div>
+        </nav>
+    </header>
+ 
+    <!--==================== CART ====================-->
+    <div class="cart" id="cart">
+        <i class='bx bx-x cart__close' id="cart-close"></i>
+        <h2 class="cart__title-center">My Cart</h2>
+        <div class="cart__container" id="cart-container">
+            <p style="text-align: center; padding: 20px;">Your cart is empty.</p>
+        </div>
+        <div class="cart__prices">
+            <span class="cart__prices-item">0 items</span>
+            <span class="cart__prices-total">₹0</span>
+        </div>
+        <form action="checkout.html" method="get" style="text-align: center; margin-top: 1.5rem;">
+            <button type="submit" class="button">Proceed to Checkout</button>
+        </form>
+    </div>
+
+    <main class="main">
+        <br><br><br><br>
+        <div class="product-container" id="product-details">
+            <!-- Data will be injected here -->
+            <div style="text-align: center; padding: 50px;">Loading product details...</div>
+        </div>
+    </main>
+
+    <footer class="footer section">
+        <!-- Footer content (same as index.html) -->
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <h3 class="footer__title">Our information</h3>
+                <ul class="footer__list">
+                    <li>Arslan Hussain</li>
+                    <li>Sage University, Indore</li>
+                    <li>+91 6206825799</li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Important Links</h3>
+                <ul class="footer__links">
+                    <li><a href="login.html" class="footer__link">Account and Login</a></li>
+                    <li><a href="cart.html" class="footer__link">Cart</a></li>
+                    <li><a href="checkout.html" class="footer__link">Checkout</a></li>
+                </ul>
+            </div>
+        </div>
+        <span class="footer__copy">&copy; 2025 WatchVerse. All rights reserved.</span>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        async function loadProduct() {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+            if (!productId) return;
+
+            try {
+                const res = await fetch('assets/data/products.json');
+                const products = await res.json();
+                const product = products.find(p => p.id == productId);
+
+                if (product) {
+                    document.title = `${product.name} | Watch Verse`;
+                    document.getElementById('product-details').innerHTML = `
+                        <div class="product-img">
+                            <img src="${product.image}" alt="${product.name}" />
+                        </div>
+                        <div class="product-details">
+                            <h1>${product.name.toUpperCase()}</h1>
+                            <p class="price">₹${product.price}</p>
+                            <p class="desc">${product.description}</p>
+                            <button class="btn" id="add-to-cart">Add to Cart</button>
+                        </div>
+                    `;
+                } else {
+                    document.getElementById('product-details').innerHTML = '<div>Product not found</div>';
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+        loadProduct();
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>About Us | Watch Verse</title>
+    <style>
+        .about-container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+        .about-container h2 { font-size: 1.5rem; color: var(--title-color); margin-bottom: 1rem; border-left: 4px solid var(--first-color); padding-left: 0.5rem; }
+        .about-container p { line-height: 1.6; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html"><img src="assets/img/favicon.jpeg" width="60px" style="border-radius: 30px;"></a>
+            <a href="index.html"><h3 class="nav__link active-link">Watch Verse</h3></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="featured.html" class="nav__link">Featured</a></li>
+                    <li class="nav__item"><a href="product.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="new.html" class="nav__link">New</a></li>
+                    <li class="nav__item"><a href="cart.html" class="nav__link">Cart</a></li>
+                    <li class="nav__item" id="auth-link"><a href="login.html" class="nav__link">Login</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="nav__btns">
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+                <div class="nav__shop" id="cart-shop"><i class='bx bx-shopping-bag'></i></div>
+                <div class="nav__toggle" id="nav-toggle"><i class='bx bx-grid-alt'></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== CART ====================-->
+    <div class="cart" id="cart">
+        <i class='bx bx-x cart__close' id="cart-close"></i>
+        <h2 class="cart__title-center">My Cart</h2>
+        <div class="cart__container" id="cart-container">
+            <p style="text-align: center; padding: 20px;">Your cart is empty.</p>
+        </div>
+        <div class="cart__prices">
+            <span class="cart__prices-item">0 items</span>
+            <span class="cart__prices-total">₹0</span>
+        </div>
+        <form action="checkout.html" method="get" style="text-align: center; margin-top: 1.5rem;">
+            <button type="submit" class="button">Proceed to Checkout</button>
+        </form>
+    </div>
+
+    <main class="main container section">
+        <h2 class="section__title">About WatchVerse</h2>
+        <section class="about-container">
+            <h2>Welcome to WatchVerse</h2>
+            <p>WatchVerse is your ultimate destination for premium watches that combine elegance, innovation, and timeless appeal. Whether you prefer bold chronographs, minimalist styles, or classic timepieces, we offer a collection that complements your personality and purpose.</p>
+
+            <h2>Who We Are</h2>
+            <p>Founded by <strong>Arslan Hussain</strong>, a tech-savvy web developer from Ranchi, WatchVerse is a result of passion and professional expertise. Arslan has previously designed and developed e-commerce platforms such as CiscaJewels, The Sparkle Story, and The Haute Bling, along with revamping websites like Elinor. With this background, WatchVerse is designed to offer a smooth, reliable, and visually appealing online shopping experience.</p>
+
+            <h2>Why WatchVerse?</h2>
+            <p>• Handpicked, high-quality watch designs<br>• Clean and user-friendly interface<br>• Built for speed and responsiveness<br>• Powered by modern code and best practices</p>
+
+            <h2>Our Mission</h2>
+            <p>To deliver top-quality watches to style-conscious customers while ensuring a seamless and satisfying online shopping experience.</p>
+
+            <h2>Our Vision</h2>
+            <p>To become a trusted leader in online watch retail, combining style, tech, and customer satisfaction.</p>
+            <p><em>Thank you for being a part of the WatchVerse journey. Because here, every second counts.</em></p>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <h3 class="footer__title">Our information</h3>
+                <ul class="footer__list">
+                    <li>Arslan Hussain</li>
+                    <li>Sage University, Indore</li>
+                    <li>+91 6206825799</li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Discover</h3>
+                <ul class="footer__links">
+                    <li><a href="about.html" class="footer__link">About Us</a></li>
+                    <li><a href="story.html" class="footer__link">Our Story</a></li>
+                    <li><a href="customer support.html" class="footer__link">Customer Support</a></li>
+                    <li><a href="return&exchange.html" class="footer__link">Return & Exchange Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Important Links</h3>
+                <ul class="footer__links">
+                    <li><a href="login.html" class="footer__link">Account and Login</a></li>
+                    <li><a href="cart.html" class="footer__link">Cart</a></li>
+                    <li><a href="checkout.html" class="footer__link">Checkout</a></li>
+                    <li><a href="copyright.html" class="footer__link">Copy Right</a></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Social</h3>
+                <ul class="footer__social">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer__social-link"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="footer__social-link"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="footer__social-link"><i class='bx bxl-instagram'></i></a>
+                </ul>
+            </div>
+        </div>
+        <span class="footer__copy">&copy; 2025 WatchVerse. All rights reserved.</span>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up"><i class='bx bx-up-arrow-alt scrollup__icon'></i></a>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

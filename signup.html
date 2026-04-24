@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Sign Up | Watch Verse</title>
+    <style>
+        .login__container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+        .login__form {
+            background-color: var(--container-color);
+            padding: 2.5rem;
+            border-radius: 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .login__title {
+            font-size: var(--h2-font-size);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .login__input-group {
+            margin-bottom: 1.5rem;
+        }
+        .login__label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: var(--small-font-size);
+        }
+        .login__input {
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--body-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            color: var(--text-color);
+            outline: none;
+        }
+        .login__button {
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .login__signup {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: var(--small-font-size);
+        }
+        .login__signup a {
+            color: var(--first-color);
+            font-weight: var(--font-medium);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html">
+                <img src="assets/img/favicon.jpeg" width="60px" style="border-radius: 30px;">
+            </a>
+            <a href="index.html">
+                <h3 class="nav__link active-link">Watch Verse</h3>
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="featured.html" class="nav__link">Featured</a></li>
+                    <li class="nav__item"><a href="product.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="new.html" class="nav__link">New</a></li>
+                    <li class="nav__item"><a href="cart.html" class="nav__link">Cart</a></li>
+                    <li class="nav__item" id="auth-link"><a href="login.html" class="nav__link">Login</a></li>
+                </ul>
+            </div>
+            <div class="nav__btns">
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+                <div class="nav__shop" id="cart-shop"><i class='bx bx-shopping-bag'></i></div>
+                <div class="nav__toggle" id="nav-toggle"><i class='bx bx-grid-alt'></i></div>
+            </div>
+        </nav>
+    </header>
+ 
+    <!--==================== CART ====================-->
+    <div class="cart" id="cart">
+        <i class='bx bx-x cart__close' id="cart-close"></i>
+        <h2 class="cart__title-center">My Cart</h2>
+        <div class="cart__container" id="cart-container">
+            <p style="text-align: center; padding: 20px;">Your cart is empty.</p>
+        </div>
+        <div class="cart__prices">
+            <span class="cart__prices-item">0 items</span>
+            <span class="cart__prices-total">₹0</span>
+        </div>
+        <form action="checkout.html" method="get" style="text-align: center; margin-top: 1.5rem;">
+            <button type="submit" class="button">Proceed to Checkout</button>
+        </form>
+    </div>
+
+    <main class="main container section">
+        <h2 class="section__title">Sign Up</h2>
+        <div class="login__container">
+            <form action="/api/auth/signup" method="POST" class="login__form signup__form">
+                <h2 class="login__title" style="display: none;">Create Account</h2>
+            
+            <div class="login__input-group">
+                <label class="login__label">Full Name</label>
+                <input type="text" name="name" class="login__input" placeholder="Enter your name" required>
+            </div>
+
+            <div class="login__input-group">
+                <label class="login__label">Email</label>
+                <input type="email" name="email" class="login__input" placeholder="Enter your email" required>
+            </div>
+
+            <div class="login__input-group">
+                <label class="login__label">Password</label>
+                <input type="password" name="password" class="login__input" placeholder="Create a password" required>
+            </div>
+
+            <button type="submit" class="button login__button">Sign Up</button>
+
+            <p class="login__signup">
+                Already have an account? <a href="login.html">Log In</a>
+            </p>
+            </form>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/cart.js"></script>
+</body>
+</html>

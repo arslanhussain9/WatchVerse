@@ -1,0 +1,143 @@
+[
+  { 
+    "id": 1, 
+    "name": "MIDO", 
+    "price": 71000, 
+    "image": "assets/img/product1.png", 
+    "description": "Experience timeless elegance with the MIDO Classic Black. Featuring a refined black dial and rose gold detailing, this Swiss-made timepiece seamlessly blends sophistication and functionality. Perfect for formal occasions and everyday wear, its genuine leather strap ensures comfort, while its precision quartz movement guarantees accuracy." 
+  },
+  { 
+    "id": 2, 
+    "name": "Hamilton Khaki pilot", 
+    "price": 79000, 
+    "image": "assets/img/product2.png", 
+    "description": "The Hamilton Khaki Pilot gives the wearer the feel of an early American pilot with its classic aviator design. It features a large, easy-to-read dial, day-date function, and Super-LumiNova hands. Built for those who love the sky, it combines rugged durability with the prestige of Swiss engineering." 
+  },
+  { 
+    "id": 3, 
+    "name": "Hamilton seaview", 
+    "price": 92000, 
+    "image": "assets/img/product3.png", 
+    "description": "Combining the spirit of the sea with Swiss precision, the Hamilton Seaview is a versatile watch that transitions perfectly from the office to the ocean. With its water-resistant construction and elegant stainless steel finish, it is as functional as it is beautiful, making it a staple for any collection." 
+  },
+  { 
+    "id": 4, 
+    "name": "fossil me3", 
+    "price": 21000, 
+    "image": "assets/img/product4.png", 
+    "description": "The Fossil ME3 is a masterpiece of mechanical design, featuring a stunning skeleton dial that reveals the intricate inner workings of the watch. Wrapped in a polished stainless steel case with a premium leather strap, it is the perfect choice for those who appreciate the raw beauty of traditional watchmaking." 
+  },
+  { 
+    "id": 5, 
+    "name": "l duchen", 
+    "price": 42000, 
+    "image": "assets/img/product5.png", 
+    "description": "L Duchen offers a perfect blend of classic Swiss artistry and modern reliability. This timepiece features a sapphire crystal and a meticulously crafted dial that reflects the light beautifully. It is designed for the modern professional who values heritage and precision in every second." 
+  },
+  { 
+    "id": 6, 
+    "name": "camo", 
+    "price": 38000, 
+    "image": "assets/img/product6.png", 
+    "description": "The Camo edition is built for the bold. Featuring a rugged aesthetic inspired by the Great Outdoors, this watch is as tough as it looks. With enhanced shock resistance and a durable strap, it's ready for any adventure, whether you're trekking through the wilderness or navigating the urban jungle." 
+  },
+  { 
+    "id": 7, 
+    "name": "ingersholl", 
+    "price": 33500, 
+    "image": "assets/img/product7.png", 
+    "description": "Ingersholl watches are world-renowned for their heritage and bold, distinctive designs. This model continues that legacy with a unique dial layout and a robust automatic movement. It is a watch for those who want to stand out from the crowd and own a piece of horological history." 
+  },
+  { 
+    "id": 8, 
+    "name": "barnocelli", 
+    "price": 130000, 
+    "image": "assets/img/product8.png", 
+    "description": "The Barnocelli is a symbol of ultimate luxury and technical mastery. Every component is hand-finished to ensure a level of detail that is rarely seen. Featuring a high-frequency movement and a case made of the finest alloys, it is a lifetime investment for the serious watch enthusiast." 
+  },
+  { 
+    "id": 9, 
+    "name": "Longines rose", 
+    "price": 167000, 
+    "image": "assets/img/product9.png", 
+    "description": "Exquisite rose gold detailing meets the timeless sophistication of Longines. This watch is a tribute to the brand's long history of elegance and performance. The soft glow of the rose gold case perfectly complements the sunray dial, making it an essential accessory for any high-profile event." 
+  },
+  { 
+    "id": 10, 
+    "name": "Jazzmaster", 
+    "price": 121000, 
+    "image": "assets/img/product10.png", 
+    "description": "Inspired by the harmony of jazz music, the Hamilton Jazzmaster is a technical marvel. It offers a contemporary take on a traditional design, with a sophisticated open-heart dial that allows you to see the rhythmic movement of the balance wheel. It is music for your wrist." 
+  },
+  { 
+    "id": 11, 
+    "name": "Dreyfuss gold", 
+    "price": 76000, 
+    "image": "assets/img/product11.png", 
+    "description": "Handmade in Switzerland, the Dreyfuss Gold is a masterpiece of artisanal watchmaking. The gold-plated finish is applied with extreme care, ensuring a deep, rich luster that lasts. This watch is 'Seafarer' waterproof, making it a rare example of a luxury dress watch that is also highly practical." 
+  },
+  { 
+    "id": 12, 
+    "name": "Portuguese rose", 
+    "price": 500000, 
+    "image": "assets/img/product12.png", 
+    "description": "The Portuguese Rose is one of the most prestigious watches in our collection. A true collector's item, it features a massive 18k rose gold case and a complex mechanical movement with a 7-day power reserve. It is a bold statement of success and refined taste." 
+  },
+  { 
+    "id": 13, 
+    "name": "tissot prx", 
+    "price": 73000, 
+    "image": "assets/img/product13.png", 
+    "description": "The Tissot PRX is a throwback to the late 70s with its integrated bracelet and slim, tonneau-shaped case. Reimagined for the modern era, it features a Powermatic 80 movement with an incredible 80-hour power reserve. It's the perfect daily driver for those who love retro-cool aesthetics." 
+  },
+  { 
+    "id": 14, 
+    "name": "SEIKO SPORTS", 
+    "price": 48000, 
+    "image": "assets/img/product14.png", 
+    "description": "For over 50 years, Seiko Sports watches have delivered high levels of reliability, durability, and performance. This modern iteration features the legendary 4R36 automatic movement and a uni-directional rotating bezel. It is a versatile timepiece that looks great on a NATO strap or a steel bracelet." 
+  },
+  { 
+    "id": 15, 
+    "name": "CITIZEN TSUYOSA", 
+    "price": 35000, 
+    "image": "assets/img/product15.png", 
+    "description": "The Citizen Tsuyosa collection brings a burst of color to the world of automatic watches. With its integrated bracelet and 'President' style links, it offers a premium feel at an accessible price. The sapphire crystal and reliable in-house movement make it a favorite among watch enthusiasts." 
+  },
+  { 
+    "id": 16, 
+    "name": "TITAN STELLAR", 
+    "price": 84000, 
+    "name": "TITAN STELLAR", 
+    "image": "assets/img/product16.png", 
+    "description": "Inspired by the mystery of the cosmos, the Titan Stellar features a unique dial texture that mimics the surface of a distant planet. It is a showcase of Indian watchmaking excellence, combining innovative design with a precision movement that is built to last a lifetime." 
+  },
+  { 
+    "id": 17, 
+    "name": "OMEGA SEAMASTER", 
+    "price": 579000, 
+    "image": "assets/img/product17.png", 
+    "description": "The Omega Seamaster is an icon of the watch world. Originally launched in 1948, it has since become the choice of professional divers and world-famous spies alike. With its co-axial master chronometer movement and helium escape valve, it represents the pinnacle of aquatic horology." 
+  },
+  { 
+    "id": 18, 
+    "name": "SWATCH X OMEGA", 
+    "price": 27000, 
+    "image": "assets/img/product18.png", 
+    "description": "The Swatch x Omega MoonSwatch collaboration took the world by storm. This 'Mission to the Moon' model faithfully recreates the design of the legendary Speedmaster Moonwatch in Bioceramic. It's a fun, accessible way to own a piece of the space exploration legacy." 
+  },
+  { 
+    "id": 19, 
+    "name": "CITIZEN ECO DRIVE", 
+    "price": 84900, 
+    "image": "assets/img/product19.png", 
+    "description": "Never change a battery again. The Citizen Eco-Drive technology converts any light source—natural or artificial—into energy that is stored in a permanently rechargeable power cell. This watch is a testament to sustainable innovation and Japanese engineering precision." 
+  },
+  { 
+    "id": 20, 
+    "name": "CASIO G-STEEL", 
+    "price": 22000, 
+    "image": "assets/img/product20.png", 
+    "description": "G-SHOCK's legendary toughness is now available in a more refined, all-metal package. The G-STEEL series combines the impact resistance Casio is known for with a sophisticated steel construction that is suitable for the office. It's the ultimate 'do-it-all' watch." 
+  }
+]

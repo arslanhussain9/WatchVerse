@@ -1,0 +1,638 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== SWIPER CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Watch Verse</title>
+        <style>
+    .slider-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: auto;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 987px;
+      overflow: hidden;
+      border-radius: 1px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      justify-content: center;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .dots-wrapper {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+    
+    .borderradius1{
+        border-radius: 30px;
+    }
+
+    .cart__container {
+  max-height: 350px;   /* or any height you prefer */
+  overflow-y: auto;
+  padding-right: 10px; /* avoid overlap with scrollbar */
+}
+        </style>
+
+
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html">
+                    <img src="assets/img/favicon.jpeg" width="60px" class="borderradius1"></a>
+                    <a href="index.html">
+                    <h3 class="nav__link active-link">Watch Verse</h3>
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="featured.html" class="nav__link">Featured</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="product.html" class="nav__link">Products</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="new.html" class="nav__link">New</a>
+
+                            </li>
+                        <li class="nav__item">
+                            <a href="cart.html" class="nav__link">Cart</a>
+                        </li>
+                        <li class="nav__item" id="auth-link">
+                            <a href="login.html" class="nav__link">Login</a>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                    <div class="nav__shop" id="cart-shop">
+                        <i class='bx bx-shopping-bag' ></i>
+                    </div>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt' ></i>
+                    </div>
+                </div>
+            </nav>
+            </nav>
+        </header>
+
+        <!--==================== CART ====================-->
+      <div class="cart" id="cart">
+  <i class='bx bx-x cart__close' id="cart-close"></i>
+
+  <h2 class="cart__title-center">My Cart</h2>
+
+   <div class="cart__container" id="cart-container">
+    <!-- Cart items will be loaded dynamically -->
+    <p style="text-align: center; padding: 20px;">Your cart is empty.</p>
+  </div>
+
+  <div class="cart__prices">
+    <span class="cart__prices-item">0 items</span>
+    <span class="cart__prices-total">₹0</span>
+  </div>
+
+  <!-- Checkout Button -->
+  <form action="checkout.html" method="get" style="text-align: center; margin-top: 1.5rem;">
+    <button type="submit" style="
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    ">
+      Proceed to Checkout
+    </button>
+  </form>
+</div>
+
+
+        <!--==================== MAIN ====================-->
+        <main class="main"> <br><br><br><br><br>
+            <!--==================== HOME ====================-->
+            <section>
+                <div class="slider-wrapper">
+                <div class="slider">
+      <div class="slides" id="slides">
+        <img src="assets/img/home1.png" alt="Watch 1">
+        <img src="assets/img/home2.jpg" alt="Watch 2">
+        <img src="assets/img/home3.png" alt="Watch 3">
+      </div>
+    </div>
+  </div>
+  <div class="dots-wrapper">
+  <span class="dot active" onclick="currentSlide(0)"></span>
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+</div>
+
+            </section>
+
+            <!--==================== FEATURED ====================-->
+            <section class="featured section container" id="featured">
+                <h2 class="section__title">
+                    Featured
+                </h2>
+
+                <div class="featured__container grid">
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+                        <a href="product_dynamic.html?id=1">
+                        <img src="assets/img/product1.png" alt="MIDO" class="featured__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">MIDO</h3>
+                            <span class="featured__price">₹71000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+                        <a href="product_dynamic.html?id=2">
+                        <img src="assets/img/product2.png" alt="" class="featured__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">Hamilton Khaki pilot</h3>
+                            <span class="featured__price">₹79000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+
+                    <article class="featured__card">
+                        <span class="featured__tag">Sale</span>
+                        <a href="product_dynamic.html?id=3">
+                        <img src="assets/img/product3.png" alt="" class="featured__img">
+                        </a>
+                        <div class="featured__data">
+                            <h3 class="featured__title">Hamilton seaview</h3>
+                            <span class="featured__price">₹92000</span>
+                        </div>
+
+                        <button class="button featured__button">ADD TO CART</button>
+                    </article>
+                </div>
+            </div>
+            </section>
+
+            <!--==================== STORY ====================-->
+            <section class="story section container">
+                <div class="story__container grid">
+                    <div class="story__data">
+                        <h2 class="section__title story__section-title">
+                            Our Story
+                        </h2>
+    
+                        <h1 class="story__title">
+                            Inspirational Watch of <br> this year
+                        </h1>
+    
+                        <p class="story__description">
+                            The latest and modern watches of this year, is available in various 
+                            presentations in this store, discover them now.
+                        </p>
+    
+                        <a href="story.html" class="button button--small">Discover</a>
+                    </div>
+
+                    <div class="story__images">
+                        <img src="assets/img/story.png" alt="" class="story__img">
+                        <div class="story__square"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== PRODUCTS ====================-->
+            <section class="new section container" id="new">
+                <h2 class="section__title">
+                    Products
+                </h2>
+                
+                <div class="new__container">
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+        
+                                <a href="product_dynamic.html?id=4" class="new__link">
+                                <img src="assets/img/product4.png" alt="" class="new__img">
+                                </a>
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">fossil me3</h3>
+                                    <span class="new__price">₹21000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>
+
+                            <article class="new__card swiper-slide">
+                               
+                                
+                                <a href="product_dynamic.html?id=5" class="new__link">
+                                <img src="assets/img/product5.png" alt="" class="new__img">
+                                </a>
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">l duchen</h3>
+                                    <span class="new__price">₹42000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>
+
+                            <article class="new__card swiper-slide">
+                               
+        
+                                <a href="product_dynamic.html?id=6" class="new__link">
+                                <img src="assets/img/product6.png" alt="" class="new__img">
+                                </a>
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">camo</h3>
+                                    <span class="new__price">₹38000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>
+
+                            <article class="new__card swiper-slide">
+                                
+        
+                                <a href="product_dynamic.html?id=7" class="new__link">
+                                <img src="assets/img/product7.png" alt="" class="new__img">
+                                </a>
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">ingersholl</h3>
+                                    <span class="new__price">₹33500</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>   
+
+                            <article class="new__card swiper-slide">
+                                
+        
+                                <a href="product_dynamic.html?id=8" class="new__link">
+                                <img src="assets/img/product8.png" alt="" class="new__img">
+                                </a>
+        
+                                <div class="new__data">
+                                    <h3 class="new__title">barnocelli</h3>
+                                    <span class="new__price">₹130000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>                     
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== TESTIMONIAL ====================-->
+            <section class="testimonial section container">
+                <div class="testimonial__container grid">
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="testimonial__card swiper-slide">
+                                <div class="testimonial__quote">
+                                    <i class='bx bxs-quote-alt-left' ></i>
+                                </div>
+                                <p class="testimonial__description">
+                                    They are the best watches that one acquires, also they are always with the latest 
+                                    news and trends, with a very comfortable price and especially with the attention 
+                                    you receive, they are always attentive to your questions.
+                                </p>
+                                <h3 class="testimonial__date">March 27. 2021</h3>
+        
+                                <div class="testimonial__perfil">
+                                    <img src="assets/img/testimonial1.jpg" alt="" class="testimonial__perfil-img">
+        
+                                    <div class="testimonial__perfil-data">
+                                        <span class="testimonial__perfil-name">Lee Doe</span>
+                                        <span class="testimonial__perfil-detail">Director of a company</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial__card swiper-slide">
+                                <div class="testimonial__quote">
+                                    <i class='bx bxs-quote-alt-left' ></i>
+                                </div>
+                                <p class="testimonial__description">
+                                    They are the best watches that one acquires, also they are always with the latest 
+                                    news and trends, with a very comfortable price and especially with the attention 
+                                    you receive, they are always attentive to your questions.
+                                </p>
+                                <h3 class="testimonial__date">March 27. 2021</h3>
+        
+                                <div class="testimonial__perfil">
+                                    <img src="assets/img/testimonial2.jpg" alt="" class="testimonial__perfil-img">
+        
+                                    <div class="testimonial__perfil-data">
+                                        <span class="testimonial__perfil-name">Samantha Mey</span>
+                                        <span class="testimonial__perfil-detail">Director of a company</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="testimonial__card swiper-slide">
+                                <div class="testimonial__quote">
+                                    <i class='bx bxs-quote-alt-left' ></i>
+                                </div>
+                                <p class="testimonial__description">
+                                    They are the best watches that one acquires, also they are always with the latest 
+                                    news and trends, with a very comfortable price and especially with the attention 
+                                    you receive, they are always attentive to your questions.
+                                </p>
+                                <h3 class="testimonial__date">March 27. 2021</h3>
+        
+                                <div class="testimonial__perfil">
+                                    <img src="assets/img/testimonial3.jpg" alt="" class="testimonial__perfil-img">
+        
+                                    <div class="testimonial__perfil-data">
+                                        <span class="testimonial__perfil-name">Raul Zaman</span>
+                                        <span class="testimonial__perfil-detail">Director of a company</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-button-next">
+                            <i class='bx bx-right-arrow-alt' ></i>
+                        </div>
+                        <div class="swiper-button-prev">
+                            <i class='bx bx-left-arrow-alt' ></i>
+                        </div>
+                    </div>
+
+                    <div class="testimonial__images">
+                        <div class="testimonial__square"></div>
+                        <img src="assets/img/testimonial.png" alt="" class="testimonial__img">
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== NEW ====================-->
+            <section class="new section container" id="new">
+                <h2 class="section__title">
+                    New Arrivals
+                </h2>
+                
+                <div class="new__container">
+                    <div class="swiper new-swiper">
+                        <div class="swiper-wrapper">
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <a href="product_dynamic.html?id=9">
+                                <img src="assets/img/product9.png" alt="" class="new__img">
+                                </a>
+                                <div class="new__data">
+                                    <h3 class="new__title">Longines rose</h3>
+                                    <span class="new__price">₹167000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>
+
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <a href="product_dynamic.html?id=10">
+                                <img src="assets/img/product10.png" alt="" class="new__img">
+                                </a>
+                                <div class="new__data">
+                                    <h3 class="new__title">Jazzmaster</h3>
+                                    <span class="new__price">₹121000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>
+
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <a href="product_dynamic.html?id=11">
+                                <img src="assets/img/product11.png" alt="" class="new__img">
+                                </a>
+                                <div class="new__data">
+                                    <h3 class="new__title">Dreyfuss gold</h3>
+                                    <span class="new__price">₹76000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>
+
+                            <article class="new__card swiper-slide">
+                                <span class="new__tag">New</span>
+                                <a href="product_dynamic.html?id=12">
+                                <img src="assets/img/product12.png" alt="" class="new__img">
+                                </a>
+                                <div class="new__data">
+                                    <h3 class="new__title">Portuguese rose</h3>
+                                    <span class="new__price">₹500000</span>
+                                </div>
+        
+                                <button class="button new__button">ADD TO CART</button>
+                            </article>                       
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== NEWSLETTER ====================-->
+            <section class="newsletter section container">
+                <div class="newsletter__bg grid">
+                    <div>
+                        <h2 class="newsletter__title">Subscribe Our <br> Newsletter</h2>
+                        <p class="newsletter__description">
+                            Don't miss out on your discounts. Subscribe to our email 
+                            newsletter to get the best offers, discounts, coupons, 
+                            gifts and much more.
+                        </p>
+                    </div>
+
+                    <form action="" class="newsletter__subscribe">
+                        <input type="email" placeholder="Enter your email" class="newsletter__input">
+                        <button class="button">
+                            SUBSCRIBE
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+         <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <h3 class="footer__title">Our information</h3>
+
+                    <ul class="footer__list">
+                        <li>Arslan Hussain</li>
+                        <li>Sage University, Indore</li>
+                        <li>+91 6206825799</li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">Discover</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="about.html" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="story.html" class="footer__link">our Story</a>
+                        </li>
+                        <li>
+                            <a href="customer support.html" class="footer__link">Customer Support</a>
+                        </li>
+                        <li>
+                            <a href="return&exchange.html" class="footer__link">Return & Exchange Policy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Important Links</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="account.html" class="footer__link">Account and Login</a>
+                        </li>
+                        <li>
+                            <a href="cart.html" class="footer__link">cart</a>
+                        </li>
+                        <li>
+                            <a href="checkout.html" class="footer__link">checkout</a>
+                        </li>
+                        <li>
+                            <a href="copyright.html" class="footer__link">Copy Right</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter' ></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram' ></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <span class="footer__copy">&copy; 2025 WatchVerse. All rights reserved.</span>
+        </footer>
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+        </a>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+        <!--=============== CART JS ===============-->
+        <script src="assets/js/cart.js"></script>
+
+        <script>
+  let currentIndex = 0;
+  const slides = document.querySelector('.slides');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    const slideWidth = slides.clientWidth;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[index].classList.add('active');
+
+    currentIndex = index;
+  }
+
+  function currentSlide(index) {
+    showSlide(index);
+  }
+
+  // Optional: Auto-play
+  setInterval(() => {
+    let nextIndex = (currentIndex + 1) % dots.length;
+    showSlide(nextIndex);
+  }, 3000);
+</script>
+
+    </body>
+</html>

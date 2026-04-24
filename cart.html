@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/cartpg.css">
+    <title>Your Cart | Watch Verse</title>
+    <style>
+        .cart-container { max-width: 900px; margin: 2rem auto; padding: 0 1.5rem; }
+        .checkout-btn { 
+            width: 100%; padding: 1.25rem; background-color: var(--first-color); 
+            color: #000; border: none; font-weight: 600; cursor: pointer; 
+            margin-top: 2rem; transition: .3s;
+        }
+        .checkout-btn:hover { background-color: var(--first-color-alt); }
+        .promo-btn { 
+            padding: 8px 12px; background-color: var(--first-color); 
+            color: #000; border: none; cursor: pointer;
+        }
+        .cart-item img { border-radius: 0 !important; }
+        .quantity-controls button { 
+            background: var(--first-color); border: none; color: #000; 
+            width: 30px; height: 30px; cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html"><img src="assets/img/favicon.jpeg" width="60px" style="border-radius: 30px;"></a>
+            <a href="index.html"><h3 class="nav__link active-link">Watch Verse</h3></a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="featured.html" class="nav__link">Featured</a></li>
+                    <li class="nav__item"><a href="product.html" class="nav__link">Products</a></li>
+                    <li class="nav__item"><a href="new.html" class="nav__link">New</a></li>
+                    <li class="nav__item"><a href="cart.html" class="nav__link">Cart</a></li>
+                    <li class="nav__item" id="auth-link"><a href="login.html" class="nav__link">Login</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="nav__btns">
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
+                <div class="nav__shop" id="cart-shop"><i class='bx bx-shopping-bag'></i></div>
+                <div class="nav__toggle" id="nav-toggle"><i class='bx bx-grid-alt'></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MINI CART ====================-->
+    <div class="cart" id="cart">
+        <i class='bx bx-x cart__close' id="cart-close"></i>
+        <h2 class="cart__title-center">My Cart</h2>
+        <div class="cart__container" id="cart-container">
+            <p style="text-align: center; padding: 20px;">Your cart is empty.</p>
+        </div>
+        <div class="cart__prices">
+            <span class="cart__prices-item">0 items</span>
+            <span class="cart__prices-total">₹0</span>
+        </div>
+        <form action="checkout.html" method="get" style="text-align: center; margin-top: 1.5rem;">
+            <button type="submit" class="button">Proceed to Checkout</button>
+        </form>
+    </div>
+
+    <main class="main container section">
+        <h2 class="section__title">YOUR CART</h2>
+        <div class="cart-container">
+            <!-- Cart items will be injected here -->
+            <div id="cart-items-main"></div>
+
+            <!-- Promo Code Section -->
+            <div style="margin-top: 3rem; max-width: 400px; border: 1px solid var(--border-color); padding: 1.5rem;">
+                <label for="promo" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Have a promo code?</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" id="promo" placeholder="Enter code" style="padding: 10px; width: 70%; border: 1px solid var(--border-color); outline: none;" />
+                    <button onclick="applyPromo()" class="promo-btn">Apply</button>
+                </div>
+                <p id="promo-msg" style="font-size: 0.875rem; margin-top: 0.5rem;"></p>
+            </div>
+
+            <!-- Cart Totals -->
+            <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                <div class="cart-total" id="cart-subtotal" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"></div>
+                <div class="cart-total" id="shipping-cost" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"></div>
+                <div class="cart-total" id="discount-amount" style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: var(--first-color);"></div>
+                <div class="cart-total" id="cart-total-main" style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 1.5rem; font-weight: 700;"></div>
+            </div>
+
+            <button class="checkout-btn" id="checkout-btn-main">Proceed to Checkout</button>
+        </div>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <h3 class="footer__title">Our information</h3>
+                <ul class="footer__list">
+                    <li>Arslan Hussain</li>
+                    <li>Sage University, Indore</li>
+                    <li>+91 6206825799</li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Discover</h3>
+                <ul class="footer__links">
+                    <li><a href="about.html" class="footer__link">About Us</a></li>
+                    <li><a href="story.html" class="footer__link">Our Story</a></li>
+                    <li><a href="customer support.html" class="footer__link">Customer Support</a></li>
+                    <li><a href="return&exchange.html" class="footer__link">Return & Exchange Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Important Links</h3>
+                <ul class="footer__links">
+                    <li><a href="login.html" class="footer__link">Account and Login</a></li>
+                    <li><a href="cart.html" class="footer__link">Cart</a></li>
+                    <li><a href="checkout.html" class="footer__link">Checkout</a></li>
+                    <li><a href="copyright.html" class="footer__link">Copy Right</a></li>
+                </ul>
+            </div>
+            <div class="footer__content">
+                <h3 class="footer__title">Social</h3>
+                <ul class="footer__social">
+                    <a href="https://www.facebook.com/" target="_blank" class="footer__social-link"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/" target="_blank" class="footer__social-link"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" class="footer__social-link"><i class='bx bxl-instagram'></i></a>
+                </ul>
+            </div>
+        </div>
+        <span class="footer__copy">&copy; 2025 WatchVerse. All rights reserved.</span>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script>
+        let discountMain = 0;
+        const shippingMain = 20;
+
+        function loadMainCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.getElementById("cart-items-main");
+            const subtotalDiv = document.getElementById("cart-subtotal");
+            const totalDiv = document.getElementById("cart-total-main");
+            const shippingDiv = document.getElementById("shipping-cost");
+            const discountDiv = document.getElementById("discount-amount");
+            const checkoutBtn = document.getElementById("checkout-btn-main");
+
+            container.innerHTML = "";
+            let subtotal = 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = "<p style='text-align:center; padding: 50px;'>Your cart is empty.</p>";
+                subtotalDiv.textContent = "";
+                totalDiv.textContent = "";
+                shippingDiv.textContent = "";
+                discountDiv.textContent = "";
+                checkoutBtn.style.display = "none";
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                subtotal += item.price * item.quantity;
+                const div = document.createElement("div");
+                div.className = "cart-item";
+                div.style = "display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-color);";
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width: 100px; height: 100px; object-fit: contain; background-color: var(--container-color);">
+                    <div style="flex: 1;">
+                        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">${item.name}</h3>
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 0.5rem;">
+                            <button onclick="changeQty(${index}, -1)" style="width:30px; height:30px; background:var(--first-color); border:none; cursor:pointer;">−</button>
+                            <span style="font-weight: 600;">${item.quantity}</span>
+                            <button onclick="changeQty(${index}, 1)" style="width:30px; height:30px; background:var(--first-color); border:none; cursor:pointer;">+</button>
+                        </div>
+                        <button onclick="removeMainItem(${index})" style="background:none; border:none; color:red; cursor:pointer; font-weight:500;">Remove</button>
+                    </div>
+                    <div style="font-weight: 700; font-size: 1.25rem;">₹${item.price * item.quantity}</div>
+                `;
+                container.appendChild(div);
+            });
+
+            const total = subtotal + shippingMain - discountMain;
+            subtotalDiv.innerHTML = `<span>Subtotal</span> <span>₹${subtotal}</span>`;
+            shippingDiv.innerHTML = `<span>Shipping</span> <span>₹${shippingMain}</span>`;
+            discountDiv.innerHTML = discountMain > 0 ? `<span>Discount</span> <span>-₹${discountMain}</span>` : "";
+            totalDiv.innerHTML = `<span>Total</span> <span>₹${total > 0 ? total : 0}</span>`;
+            checkoutBtn.style.display = "block";
+        }
+
+        function changeQty(index, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart[index].quantity += change;
+            if (cart[index].quantity <= 0) cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadMainCart();
+            if(typeof renderCart === 'function') renderCart();
+        }
+
+        function removeMainItem(index) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadMainCart();
+            if(typeof renderCart === 'function') renderCart();
+        }
+
+        function applyPromo() {
+            const code = document.getElementById("promo").value.trim().toUpperCase();
+            const msg = document.getElementById("promo-msg");
+            if (code === "WATCH20") {
+                discountMain = 500; // Sample flat discount
+                msg.textContent = "Promo applied! You saved ₹500";
+                msg.style.color = "green";
+            } else {
+                discountMain = 0;
+                msg.textContent = "Invalid promo code.";
+                msg.style.color = "red";
+            }
+            loadMainCart();
+        }
+
+        document.getElementById("checkout-btn-main").onclick = () => window.location.href = "checkout.html";
+        window.addEventListener('DOMContentLoaded', loadMainCart);
+    </script>
+</body>
+</html>

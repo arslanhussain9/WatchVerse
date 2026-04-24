@@ -1,0 +1,328 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+        <!--=============== SWIPER CSS ===============--> 
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Responsive watches website - Bedimcode</title>
+        <style>.borderradius1{
+        border-radius: 30px;
+    }
+
+    .cart__container {
+  max-height: 350px;   /* or any height you prefer */
+  overflow-y: auto;
+  padding-right: 10px; /* avoid overlap with scrollbar */
+}</style>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html">
+                    <img src="assets/img/favicon.jpeg" width="60px" class="borderradius1"></a>
+                    <a href="index.html">
+                    <h3 class="nav__link active-link">Watch Verse</h3>
+                </a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="index.html" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="featured.html" class="nav__link">Featured</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="product.html" class="nav__link">Products</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="new.html" class="nav__link">New</a>
+
+                            </li>
+                        <li class="nav__item">
+                            <a href="cart.html" class="nav__link">Cart</a>
+                        </li>
+                        </li>
+                    </ul>
+
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x' ></i>
+                    </div>
+                </div>
+
+                <div class="nav__btns">
+                    <!-- Theme change button -->
+                    <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+                    <div class="nav__shop" id="cart-shop">
+                        <i class='bx bx-shopping-bag' ></i>
+                    </div>
+
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class='bx bx-grid-alt' ></i>
+                    </div>
+                </div>
+            </nav>
+            </nav>
+        </header>
+
+        <!--==================== CART ====================-->
+      <div class="cart" id="cart">
+  <i class='bx bx-x cart__close' id="cart-close"></i>
+
+  <h2 class="cart__title-center">My Cart</h2>
+
+  <div class="cart__container">
+    <%-- Loop through cart items from your Java backend --%>
+    <% for (CartItem item : cartItems) { %>
+      <article class="cart__card">
+        <div class="cart__box">
+          <img src="<%= item.getImagePath() %>" alt="<%= item.getName() %>" class="cart__img">
+        </div>
+
+        <div class="cart__details">
+          <h3 class="cart__title"><%= item.getName() %></h3>
+          <span class="cart__price">$<%= item.getPrice() %></span>
+
+          <div class="cart__amount">
+            <div class="cart__amount-content">
+              <form method="post" action="UpdateCartServlet">
+                <input type="hidden" name="productId" value="<%= item.getId() %>" />
+                <button class="cart__amount-box" name="action" value="decrease" type="submit">
+                  <i class='bx bx-minus'></i>
+                </button>
+                <span class="cart__amount-number"><%= item.getQuantity() %></span>
+                <button class="cart__amount-box" name="action" value="increase" type="submit">
+                  <i class='bx bx-plus'></i>
+                </button>
+              </form>
+            </div>
+
+            <form method="post" action="RemoveFromCartServlet">
+              <input type="hidden" name="productId" value="<%= item.getId() %>" />
+              <button class="cart__amount-trash" type="submit">
+                <i class='bx bx-trash-alt'></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </article>
+    <% } %>
+  </div>
+
+  <div class="cart__prices">
+    <span class="cart__prices-item"><%= cartItems.size() %> items</span>
+    <span class="cart__prices-total">$<%= totalPrice %></span>
+  </div>
+
+  <!-- Checkout Button -->
+  <form action="checkout.html" method="post" style="text-align: center; margin-top: 1.5rem;">
+    <button type="submit" style="
+      padding: 12px 24px;
+      font-size: 1rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    ">
+      Proceed to Checkout
+    </button>
+  </form>
+</div>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+           
+
+            <!--=============== CHECKOUT PAGE ===============-->
+<!-- Checkout Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section__title">Checkout</h2>
+
+    <div class="grid checkout__container">
+      <!-- Order Summary: Items loaded dynamically -->
+      <div class="checkout__summary">
+        <h3 class="checkout__title">Order Summary</h3>
+        <!-- Cart items will be inserted here via JS -->
+      </div>
+
+      <!-- Billing Form -->
+      <div class="checkout__form">
+        <h3 class="checkout__title">Billing Details</h3>
+        <form>
+          <div class="checkout__field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required />
+          </div>
+          <div class="checkout__field">
+            <label>Email</label>
+            <input type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="checkout__field">
+            <label>Address</label>
+            <input type="text" placeholder="123 Main Street" required />
+          </div>
+          <div class="checkout__field">
+            <label>City</label>
+            <input type="text" placeholder="City" required />
+          </div>
+          <div class="checkout__field">
+            <label>Postal Code</label>
+            <input type="text" placeholder="ZIP / Postal Code" required />
+          </div>
+          <div class="checkout__field">
+            <label>Country</label>
+            <input type="text" placeholder="Country" required />
+          </div>
+          <button class="button" type="submit">Place Order</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <h3 class="footer__title">Our information</h3>
+
+                    <ul class="footer__list">
+                        <li>Arslan Hussain</li>
+                        <li>Sage University, Indore</li>
+                        <li>+91 6206825799</li>
+                    </ul>
+                </div>
+                <div class="footer__content">
+                    <h3 class="footer__title">Discover</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="about.html" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="story.html" class="footer__link">our Story</a>
+                        </li>
+                        <li>
+                            <a href="customer support.html" class="footer__link">Customer Support</a>
+                        </li>
+                        <li>
+                            <a href="return&exchange.html" class="footer__link">Return & Exchange Policy</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Important Links</h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="account.html" class="footer__link">Account and Login</a>
+                        </li>
+                        <li>
+                            <a href="cart.html" class="footer__link">cart</a>
+                        </li>
+                        <li>
+                            <a href="checkout.html" class="footer__link">checkout</a>
+                        </li>
+                        <li>
+                            <a href="copyright.html" class="footer__link">Copy Right</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Social</h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook'></i>
+                        </a>
+
+                        <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-twitter' ></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram' ></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+
+            <span class="footer__copy">&copy; 2025 WatchVerse. All rights reserved.</span>
+        </footer>
+        <!--=============== SCROLL UP ===============-->
+        <a href="#" class="scrollup" id="scroll-up"> 
+            <i class='bx bx-up-arrow-alt scrollup__icon' ></i>
+        </a>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+
+        <!--=============== CART JS ===============-->
+        <script src="assets/js/cart.js"></script>
+
+        <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const summaryContainer = document.querySelector(".checkout__summary");
+
+    // Empty cart
+    if (cart.length === 0) {
+      summaryContainer.innerHTML += `<p>Your cart is empty.</p>`;
+      return;
+    }
+
+    let total = 0;
+
+    // Inject each item into the checkout summary
+    cart.forEach(item => {
+      const itemTotal = item.price * item.quantity;
+      total += itemTotal;
+
+      const itemHTML = `
+        <div class="checkout__card">
+          <img src="${item.image}" alt="${item.name}" class="checkout__img" />
+          <div class="checkout__details">
+            <h4 class="checkout__product-name">${item.name}</h4>
+            <p class="checkout__price">₹${item.price} x ${item.quantity}</p>
+            <p class="checkout__qty">Subtotal: ₹${itemTotal}</p>
+          </div>
+        </div>
+      `;
+      summaryContainer.innerHTML += itemHTML;
+    });
+
+    // Add total section
+    summaryContainer.innerHTML += `
+      <div class="checkout__total">
+        <span>Total:</span>
+        <span>₹${total}</span>
+      </div>
+    `;
+  });
+</script>
+
+    </body>
+</html>
