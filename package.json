@@ -2,7 +2,6 @@
   "name": "watch-verse-backend",
   "version": "1.0.0",
   "description": "Backend for Watch Verse",
-  "main": "api/index.js",
   "scripts": {
     "start": "node api/index.js",
     "dev": "nodemon api/index.js"
