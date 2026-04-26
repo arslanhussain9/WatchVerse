@@ -23,6 +23,11 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/watchverse'
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// Export for Vercel
+module.exports = app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Server running on port ${PORT}`);
+    });
+}
