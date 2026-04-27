@@ -21,10 +21,13 @@ mongoose.connect(process.env.MONGO_URI, {
 const authRoutes = require('../routes/auth');
 app.use('/api/auth', authRoutes);
 
-// Local development
+// Local development only — static files served by Vercel in production
 if (process.env.NODE_ENV !== 'production') {
     const path = require('path');
     app.use(express.static(path.join(__dirname, '../public')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../public/index.html'));
+    });
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 }
